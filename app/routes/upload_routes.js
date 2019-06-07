@@ -6,7 +6,7 @@ const removeBlanks = require('../../lib/remove_blank_fields')
 const router = express.Router()
 const passport = require('passport')
 const requireToken = passport.authenticate('bearer', { session: false })
-const requireOwnership = customErrors.requireOwnership
+// const requireOwnership = customErrors.requireOwnership
 
 // Require the multer middle library for handling multi-part requests
 const multer = require('multer')
