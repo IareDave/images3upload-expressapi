@@ -70,16 +70,46 @@ router.get('/uploads/:id', (req, res, next) => {
 // UPDATE
 // PATCH /uploads/5a7db6c74d55bc51bdf39793
 router.patch('/uploads/:id', removeBlanks, requireToken, (req, res, next) => {
-  delete req.body.upload.owner
-
   Upload.findById(req.params.id)
     .then(handle404)
     .then(upload => {
-      requireOwnership(req, upload)
+      // requireOwnership(req, upload)
       return upload.update(req.body.upload)
     })
     .then(() => res.sendStatus(204))
     .catch(next)
+  // delete req.body.Upload.owner
+  // promiseS3Upload(req.file)
+  //   // This .then receives the response from aws if the upload was successful.
+  //   .then(awsResponse => {
+  //     Upload.findById(req.params.id)
+  //       .then(handle404)
+  //       .then(upload => {
+  //         // requireOwnership(req, upload)
+  //         return upload.update(req.body.file)
+  //       })
+  //       .then(() => res.sendStatus(204))
+  //       .catch(next)
+  //     // Create an Upload document with the Location property from aws's
+  //     // response.
+  //     // Upload.create({file: awsResponse.Location, owner: req.user.id})
+  //   })
+  // Upload.findById(req.params.id)
+  //   .then(handle404)
+  //   .then(upload => {
+  //     // requireOwnership(req, upload)
+  //     return upload.update(req.body.upload)
+  //   })
+  //   .then(() => res.sendStatus(204))
+  //   .catch(next)
+  // Upload.findById(req.params.id)
+  //   .then(handle404)
+  //   .then(upload => {
+  //     // requireOwnership(req, upload)
+  //     return upload.update(req.body.upload)
+  //   })
+  //   .then(() => res.sendStatus(204))
+  //   .catch(next)
 })
 
 // DESTROY
@@ -88,7 +118,6 @@ router.delete('/uploads/:id', requireToken, (req, res, next) => {
   Upload.findById(req.params.id)
     .then(handle404)
     .then(upload => {
-      requireOwnership(req, upload)
       upload.remove()
     })
     .then(() => res.sendStatus(204))
