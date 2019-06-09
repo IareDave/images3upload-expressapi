@@ -4,6 +4,10 @@
 + Express
 + AWS S3 buckets
 
+# **Installation**
+npm install
+npm run server
+
 # **Development Process**
 I started this project by catalouging all of the required specifications given to us by General Assembly. I then set out with first creating the HTML skeleton for user login forms and the necessary navigation menu options for all of the various actions a user is able to make.
 
@@ -11,10 +15,6 @@ After the layout was created I set out by creating the code logic for user autho
 
 # Unsolved problems
 I wanted to integrate third party APIs to allow the user to access their profile pictures from other sites such as GitHub, Facebook, and Instagram. 
-
-# **Installation**
-npm install
-npm run server
 
 # Wireframes
 Website wireframe https://imgur.com/yoQYH7L
