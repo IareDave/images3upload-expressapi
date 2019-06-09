@@ -16,6 +16,26 @@ After the layout was created I set out by creating the code logic for user autho
 # Unsolved problems
 I wanted to integrate third party APIs to allow the user to access their profile pictures from other sites such as GitHub, Facebook, and Instagram. 
 
+### Authentication
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| POST   | `/sign-up`             | `users#signup`    |
+| POST   | `/sign-in`             | `users#signin`    |
+| PATCH  | `/change-password/` | `users#changepw`  |
+| DELETE | `/sign-out/`        | `users#signout`   |
+
+### Uploads
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| POST | `/create-uploads`             | `users#create`    |
+| GET | `/uploads`             | `users#show`    |
+| GET | `/uploads/:id` | `users#show:id`  |
+| DELETE | `/uploads/:id`        | `users#delete`   |
+| PATCH | `/uploads/:id`        | `users#update`   |
+
+
 # Wireframes
 Website wireframe https://imgur.com/yoQYH7L
 ERD https://imgur.com/a/dDpEiZH
