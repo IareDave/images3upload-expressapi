@@ -1,7 +1,8 @@
 # **Technologies Used**
 + Javascript
-+ React
-+ HTML / CSS
++ Node.js
++ Express
++ AWS S3 buckets
 
 # **Development Process**
 I started this project by catalouging all of the required specifications given to us by General Assembly. I then set out with first creating the HTML skeleton for user login forms and the necessary navigation menu options for all of the various actions a user is able to make.
