@@ -12,6 +12,10 @@ After the layout was created I set out by creating the code logic for user autho
 # Unsolved problems
 I wanted to integrate third party APIs to allow the user to access their profile pictures from other sites such as GitHub, Facebook, and Instagram. 
 
+# **Installation**
+npm install
+npm run server
+
 # Wireframes
 Website wireframe https://imgur.com/yoQYH7L
 ERD https://imgur.com/a/dDpEiZH
