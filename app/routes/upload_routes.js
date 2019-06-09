@@ -7,6 +7,7 @@ const router = express.Router()
 const passport = require('passport')
 const requireToken = passport.authenticate('bearer', { session: false })
 // const requireOwnership = customErrors.requireOwnership
+require('dotenv').config()
 
 // Require the multer middle library for handling multi-part requests
 const multer = require('multer')
