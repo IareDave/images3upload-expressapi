@@ -70,10 +70,17 @@ router.get('/uploads/:id', (req, res, next) => {
 
 // UPDATE
 // PATCH /uploads/5a7db6c74d55bc51bdf39793
-router.patch('/uploads/:id', requireToken, (req, res, next) => {
+router.patch('/uploads/:id', uploadMult.single('image'), requireToken, (req, res, next) => {
   // delete req.body.upload.owner
 
+  promiseS3Upload(req.file)
+    .then(awsResponse => {
+    // Create an Upload document with the Location property from aws's
+    // response.
+      return Upload.update({file: awsResponse.Location, owner: req.user.id})
+    })
   Upload.findById(req.params.id)
+  // Upload.findById(req.params.id)
     .then(handle404)
     .then(upload => {
       // requireOwnership(req, upload)\
